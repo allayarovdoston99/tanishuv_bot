@@ -1,3 +1,7 @@
+print("BOT STARTING...")
+import sys
+sys.stdout.flush()
+
 import asyncio
 import logging
 import sys
@@ -167,4 +171,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         logger.info("[STOP] Bot to'xtatildi (Keyboard Interrupt)")
     except Exception as e:
+
         logger.critical(f"[CRITICAL ERROR] Fatal xato: {e}", exc_info=True)
