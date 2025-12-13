@@ -1,32 +1,8 @@
-# Bot Framework
 aiogram==3.13.1
-
-# Database
-asyncpg==0.29.0
-
-# Redis (FSM Storage)
-redis==5.0.1
-
-# Environment
-python-dotenv==1.0.0
-
-# Image Processing (profil rasmlari uchun)
-Pillow>=10.2.0
-
-# Date/Time utilities
-python-dateutil==2.8.2
-
-# Async HTTP Client (agar kerak bo'lsa)
+aiosqlite==0.19.0
 aiohttp==3.9.1
-
-# Logging (ixtiyoriy, lekin tavsiya etiladi)
+Pillow>=10.2.0
+python-dateutil==2.8.2
 colorlog==6.8.0
-
-# Validators (telefon, email uchun)
 validators==0.22.0
-
-# Cryptography (agar to'lov tizimi kerak bo'lsa)
 cryptography==41.0.7
-
-# APScheduler (scheduled tasks uchun - expired stories o'chirish)
-apscheduler==3.10.4
