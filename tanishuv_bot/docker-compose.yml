@@ -1,0 +1,34 @@
+# ==================== docker-compose.yml ====================
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: tanishuv_postgres
+    environment:
+      POSTGRES_DB: tanishuv_bot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  bot:
+    build: .
+    container_name: tanishuv_bot
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=tanishuv_bot
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    env_file:
+      - .env
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
