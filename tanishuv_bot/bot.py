@@ -6,7 +6,6 @@ import asyncio
 import logging
 import sys
 from aiogram import Bot, Dispatcher
-from aiogram.fsm.storage.redis import RedisStorage
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import BotCommand
 from aiogram import F
@@ -14,6 +13,7 @@ from aiogram.filters import Command
 
 import config
 from database import db
+storage = MemoryStorage()
 
 # Handlerlarni import qilish
 from handlers import (
@@ -173,3 +173,4 @@ if __name__ == "__main__":
     except Exception as e:
 
         logger.critical(f"[CRITICAL ERROR] Fatal xato: {e}", exc_info=True)
+
