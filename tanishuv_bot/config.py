@@ -1,8 +1,4 @@
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
 # ==================== BOT ====================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 if not BOT_TOKEN:
@@ -180,4 +176,5 @@ if __name__ != "__main__":
         validate_config()
     except ValueError as e:
         print(f"[ERROR] {e}")
+
         print("[INFO] .env faylni to'ldiring va qayta urinib ko'ring")
